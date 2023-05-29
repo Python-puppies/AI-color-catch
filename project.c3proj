@@ -91,7 +91,9 @@
 			"GameOver_txt",
 			"Mouse",
 			"LocalStorage",
-			"TiledBackground"
+			"TiledBackground",
+			"MainMenu_txt",
+			"ResetHighScore"
 		],
 		"subfolders": []
 	},
@@ -103,13 +105,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Game",
+			"Main menu"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet 1",
+			"Event sheet 2"
 		],
 		"subfolders": []
 	},
@@ -266,5 +270,5 @@
 	},
 	"viewportWidth": 480,
 	"viewportHeight": 854,
-	"firstLayout": null
+	"firstLayout": "Main menu"
 }

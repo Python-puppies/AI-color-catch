@@ -1,0 +1,59 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 156650023694370,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "MainMenu_txt"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 103008518258536,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 446232032175423
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 569916437683675,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "ResetHighScore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 836509181644005,
+					"parameters": {
+						"key": "\"HighScore\"",
+						"value": "\"0\""
+					}
+				}
+			],
+			"sid": 796803440916873
+		}
+	],
+	"sid": 266233165474876
+}
