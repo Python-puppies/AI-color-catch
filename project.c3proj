@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
@@ -75,7 +82,8 @@
 			"TimePeriod",
 			"GameOver_obj",
 			"GameOver_txt",
-			"Mouse"
+			"Mouse",
+			"LocalStorage"
 		],
 		"subfolders": []
 	},
