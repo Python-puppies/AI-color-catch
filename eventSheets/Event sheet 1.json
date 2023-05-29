@@ -25,19 +25,78 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 844582366539986
+				}
+			],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 452583026704337,
+					"parameters": {
+						"time-scale": "1.0"
+					}
+				}
+			],
+			"sid": 460929096942318
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 952924722857473
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Score",
+					"sid": 796867157635427,
+					"parameters": {
+						"text": "\"Score:\" &Score"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TimePeriod",
+					"sid": 927105648251701,
+					"parameters": {
+						"text": "\"Time: \" &Timer"
+					}
+				}
+			],
+			"sid": 229027767986206
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 591919896193673,
+					"sid": 993954839609644,
 					"parameters": {
-						"interval-seconds": "1"
+						"interval-seconds": "1.0"
 					}
 				}
 			],
 			"actions": [
 				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 366394754266415,
+					"parameters": {
+						"variable": "Timer",
+						"value": "1"
+					}
+				},
+				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 510143841574330,
+					"sid": 679733518976592,
 					"parameters": {
 						"object-to-create": "BadBlock",
 						"layer": "0",
@@ -50,7 +109,7 @@
 				{
 					"id": "set-default-color",
 					"objectClass": "BadBlock",
-					"sid": 581187213555246,
+					"sid": 767488417731204,
 					"parameters": {
 						"color": "rgba(random(0, 255), random(0, 150), random(0, 255), 1)"
 					}
@@ -58,32 +117,16 @@
 				{
 					"id": "set-enabled",
 					"objectClass": "BadBlock",
-					"sid": 812109160299553,
+					"sid": 621207162165325,
 					"behaviorType": "Bullet",
 					"parameters": {
 						"state": "enabled"
 					}
-				}
-			],
-			"sid": 525017337846437
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 837786641792038,
-					"parameters": {
-						"interval-seconds": "1"
-					}
-				}
-			],
-			"actions": [
+				},
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 863725963486883,
+					"sid": 441187826062712,
 					"parameters": {
 						"object-to-create": "GoodBlock",
 						"layer": "0",
@@ -96,14 +139,104 @@
 				{
 					"id": "set-enabled",
 					"objectClass": "GoodBlock",
-					"sid": 609679580179318,
+					"sid": 916627556964768,
 					"behaviorType": "Bullet",
 					"parameters": {
 						"state": "enabled"
 					}
 				}
 			],
-			"sid": 663927298451916
+			"sid": 178033518734503
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "GoodBlock",
+					"sid": 218554001706267
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "GoodBlock",
+					"sid": 920526232625932
+				}
+			],
+			"sid": 578095556223635
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GoodBlock",
+					"sid": 730236109048806,
+					"parameters": {
+						"object": "BadBlock"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "BadBlock",
+					"sid": 367796849352053
+				}
+			],
+			"sid": 338723789154935
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GoodBlock",
+					"sid": 269582943254244,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "GoodBlock",
+					"sid": 861717604179509
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 101930143633226,
+					"parameters": {
+						"variable": "Score",
+						"value": "5"
+					}
+				}
+			],
+			"sid": 655209206613210
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GoodBlock",
+					"sid": 277931237261088,
+					"parameters": {
+						"object": "Ground"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "GoodBlock",
+					"sid": 445370726511248
+				}
+			],
+			"sid": 702758808603215
 		},
 		{
 			"eventType": "block",
@@ -127,45 +260,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-outside-layout",
-					"objectClass": "GoodBlock",
-					"sid": 317328102320333
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "GoodBlock",
-					"sid": 848230575137744
-				}
-			],
-			"sid": 511344764434316
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "GoodBlock",
-					"sid": 799202185325869,
-					"parameters": {
-						"object": "BadBlock"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "BadBlock",
-					"sid": 311422134912729
-				}
-			],
-			"sid": 995629380207523
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "BadBlock",
 					"sid": 908959674153279,
@@ -179,39 +273,18 @@
 					"id": "destroy",
 					"objectClass": "BadBlock",
 					"sid": 608233970144099
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 297263934553010,
+					"parameters": {
+						"variable": "Score",
+						"value": "3"
+					}
 				}
 			],
 			"sid": 288517969452359
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "GoodBlock",
-					"sid": 177079451328518,
-					"parameters": {
-						"object": "Player"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "GoodBlock",
-					"sid": 624277429332257
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 446314328157242,
-					"parameters": {
-						"variable": "Score",
-						"value": "5"
-					}
-				}
-			],
-			"sid": 941420183163058
 		},
 		{
 			"eventType": "block",
@@ -230,93 +303,9 @@
 					"id": "destroy",
 					"objectClass": "BadBlock",
 					"sid": 708075321434176
-				},
-				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 330581650391746,
-					"parameters": {
-						"variable": "Score",
-						"value": "3"
-					}
 				}
 			],
 			"sid": 208958512833535
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "GoodBlock",
-					"sid": 679426207449728,
-					"parameters": {
-						"object": "Ground"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "GoodBlock",
-					"sid": 837077226575720
-				}
-			],
-			"sid": 783975272145312
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 299567701837039
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "Score",
-					"sid": 401718674984536,
-					"parameters": {
-						"text": "\"Score:\" &Score"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "TimePeriod",
-					"sid": 276977748363817,
-					"parameters": {
-						"text": "\"Time: \" &Timer"
-					}
-				}
-			],
-			"sid": 867883206802424
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 888365246488556,
-					"parameters": {
-						"interval-seconds": "1.0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 225932497824601,
-					"parameters": {
-						"variable": "Timer",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 696644739775171
 		},
 		{
 			"eventType": "group",
@@ -407,27 +396,6 @@
 				}
 			],
 			"sid": 372351729525904
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 181985382396530
-				}
-			],
-			"actions": [
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 137580185444239,
-					"parameters": {
-						"time-scale": "1.0"
-					}
-				}
-			],
-			"sid": 810148770433943
 		}
 	],
 	"sid": 773458510573163
