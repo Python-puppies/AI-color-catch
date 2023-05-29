@@ -1,5 +1,68 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 782441139269374,
+					"parameters": {
+						"interval-seconds": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 289969603430136,
+					"parameters": {
+						"object-to-create": "Block",
+						"layer": "0",
+						"x": "random(Block.Width / 2, LayoutWidth - Block.Width / 2)",
+						"y": "-Block.Height / 2",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Block",
+					"sid": 812109160299553,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 525017337846437
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 348181221989709
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Block",
+					"sid": 428987905277572
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Block",
+					"sid": 422893427954961
+				}
+			],
+			"sid": 910278857722385
+		}
+	],
 	"sid": 773458510573163
 }

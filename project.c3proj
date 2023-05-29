@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 33600,
-	"name": "AI Color Match",
+	"name": "AI Color Catch",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
@@ -10,6 +10,13 @@
 			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -39,7 +46,8 @@
 	"objectTypes": {
 		"items": [
 			"Player",
-			"Sprite"
+			"Ground",
+			"Block"
 		],
 		"subfolders": []
 	},
