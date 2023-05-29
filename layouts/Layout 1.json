@@ -31,6 +31,11 @@
 								"default-controls": true,
 								"enabled": true
 							}
+						},
+						"BoundToLayout": {
+							"properties": {
+								"bound-by": "edge"
+							}
 						}
 					},
 					"world": {
@@ -119,8 +124,8 @@
 	"sid": 582774969348148,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 960,
-	"height": 1708,
+	"width": 480,
+	"height": 854,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,

@@ -9,6 +9,11 @@
 			"behaviorId": "Platform",
 			"name": "Platform",
 			"sid": 751148132568639
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 778502276804535
 		}
 	],
 	"effectTypes": [],
