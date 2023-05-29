@@ -2,6 +2,26 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 331821653377514
+		},
+		{
+			"eventType": "variable",
+			"name": "Timer",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 393362734641815
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -141,6 +161,273 @@
 				}
 			],
 			"sid": 995629380207523
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BadBlock",
+					"sid": 908959674153279,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "BadBlock",
+					"sid": 608233970144099
+				}
+			],
+			"sid": 288517969452359
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GoodBlock",
+					"sid": 177079451328518,
+					"parameters": {
+						"object": "Player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "GoodBlock",
+					"sid": 624277429332257
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 446314328157242,
+					"parameters": {
+						"variable": "Score",
+						"value": "5"
+					}
+				}
+			],
+			"sid": 941420183163058
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BadBlock",
+					"sid": 600853562160696,
+					"parameters": {
+						"object": "Ground"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "BadBlock",
+					"sid": 708075321434176
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 330581650391746,
+					"parameters": {
+						"variable": "Score",
+						"value": "3"
+					}
+				}
+			],
+			"sid": 208958512833535
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "GoodBlock",
+					"sid": 679426207449728,
+					"parameters": {
+						"object": "Ground"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "GoodBlock",
+					"sid": 837077226575720
+				}
+			],
+			"sid": 783975272145312
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 299567701837039
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Score",
+					"sid": 401718674984536,
+					"parameters": {
+						"text": "\"Score:\" &Score"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "TimePeriod",
+					"sid": 276977748363817,
+					"parameters": {
+						"text": "\"Time: \" &Timer"
+					}
+				}
+			],
+			"sid": 867883206802424
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 888365246488556,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 225932497824601,
+					"parameters": {
+						"variable": "Timer",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 696644739775171
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game Over",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 768067567835980,
+							"parameters": {
+								"variable": "Timer",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 622888931273031,
+							"parameters": {
+								"time-scale": "0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "BadBlock",
+							"sid": 307004122265937
+						},
+						{
+							"id": "destroy",
+							"objectClass": "GoodBlock",
+							"sid": 199812019414204
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 259024500226040
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "GameOver_obj",
+							"sid": 732919162814971,
+							"parameters": {
+								"object": "GameOver_txt",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 357586284042303
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 994770098768923,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "GameOver_txt"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 334189027886464
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 290015654088580
+						}
+					],
+					"sid": 953013026230167
+				}
+			],
+			"sid": 372351729525904
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 181985382396530
+				}
+			],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 137580185444239,
+					"parameters": {
+						"time-scale": "1.0"
+					}
+				}
+			],
+			"sid": 810148770433943
 		}
 	],
 	"sid": 773458510573163
