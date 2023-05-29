@@ -359,7 +359,9 @@
 						"live-preview": false
 					},
 					"uid": 8,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"game_over": false
+					},
 					"behaviors": {},
 					"world": {
 						"x": 0,

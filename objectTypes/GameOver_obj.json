@@ -3,7 +3,15 @@
 	"plugin-id": "Sprite",
 	"sid": 693272933418326,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "game_over",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 811030564766432
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

@@ -326,6 +326,15 @@
 								"comparison": 0,
 								"value": "0"
 							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "GameOver_obj",
+							"sid": 881211474854276,
+							"parameters": {
+								"instance-variable": "game_over"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -361,6 +370,14 @@
 								"layer": "0",
 								"image-point": "0",
 								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "GameOver_obj",
+							"sid": 296020987265514,
+							"parameters": {
+								"instance-variable": "game_over"
 							}
 						}
 					],
