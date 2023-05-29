@@ -1,14 +1,14 @@
 {
-	"name": "redBlock",
+	"name": "GoodBlock",
 	"plugin-id": "Sprite",
-	"sid": 513028068946656,
+	"sid": 965603115634629,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Bullet",
 			"name": "Bullet",
-			"sid": 933300253986403
+			"sid": 253121975598335
 		}
 	],
 	"effectTypes": [],
@@ -24,12 +24,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2377380,
+						"imageSpriteId": 5879905,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 933632239855705,
+				"sid": 197194730687587,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

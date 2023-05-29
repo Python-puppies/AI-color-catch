@@ -1,17 +1,22 @@
 {
-	"name": "greenBlock",
+	"name": "BadBlock",
 	"plugin-id": "Sprite",
-	"sid": 965603115634629,
+	"sid": 513028068946656,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Bullet",
 			"name": "Bullet",
-			"sid": 253121975598335
+			"sid": 933300253986403
 		}
 	],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "tint",
+			"name": "Tint"
+		}
+	],
 	"animations": {
 		"items": [
 			{
@@ -24,12 +29,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5879905,
+						"imageSpriteId": 1001597,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 197194730687587,
+				"sid": 933632239855705,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
