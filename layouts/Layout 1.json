@@ -362,8 +362,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 7,
-						"y": 470,
+						"x": 0,
+						"y": 400,
 						"width": 16,
 						"height": 16,
 						"originX": 0.5,
@@ -381,7 +381,7 @@
 				{
 					"type": "GameOver_txt",
 					"properties": {
-						"text": "Game Over, wanna try to beat the high score? Click here",
+						"text": "Game Over, wanna try to beat the high score?\nClick here",
 						"enable-bbcode": true,
 						"font": "Cascadia Mono",
 						"size": 15,
@@ -407,7 +407,7 @@
 					"world": {
 						"x": 528,
 						"y": 347,
-						"width": 429,
+						"width": 480,
 						"height": 57,
 						"originX": 0,
 						"originY": 0,
