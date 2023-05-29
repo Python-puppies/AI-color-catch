@@ -3,6 +3,16 @@
 	"events": [
 		{
 			"eventType": "variable",
+			"name": "Timer",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 838017810457240
+		},
+		{
+			"eventType": "variable",
 			"name": "Score",
 			"type": "number",
 			"initialValue": "0",
@@ -13,13 +23,13 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "Timer",
+			"name": "HighScore",
 			"type": "number",
-			"initialValue": "30",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 393362734641815
+			"sid": 155617134720059
 		},
 		{
 			"eventType": "block",
@@ -55,17 +65,25 @@
 				{
 					"id": "set-text",
 					"objectClass": "Score",
-					"sid": 796867157635427,
+					"sid": 311537886831552,
 					"parameters": {
-						"text": "\"Score:\" &Score"
+						"text": "\"Score: \" & Score"
 					}
 				},
 				{
 					"id": "set-text",
 					"objectClass": "TimePeriod",
-					"sid": 927105648251701,
+					"sid": 888065052315408,
 					"parameters": {
-						"text": "\"Time: \" &Timer"
+						"text": "\"Time: \" & Timer"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "HighScore",
+					"sid": 193916461002226,
+					"parameters": {
+						"text": "\"High Score: \""
 					}
 				}
 			],
@@ -306,6 +324,33 @@
 				}
 			],
 			"sid": 208958512833535
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 511572683028875,
+					"parameters": {
+						"first-value": "Score",
+						"comparison": 4,
+						"second-value": "HighScore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 442313018533159,
+					"parameters": {
+						"variable": "HighScore",
+						"value": "Score"
+					}
+				}
+			],
+			"sid": 700833393752176
 		},
 		{
 			"eventType": "group",
