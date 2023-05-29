@@ -92,7 +92,7 @@
 					}
 				},
 				{
-					"type": "redBlock",
+					"type": "BadBlock",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -115,6 +115,19 @@
 							}
 						}
 					},
+					"effects": {
+						"Tint": {
+							"isEnabled": true,
+							"parameters": {
+								"color": [
+									1,
+									1,
+									1,
+									1
+								]
+							}
+						}
+					},
 					"world": {
 						"x": -100,
 						"y": -66,
@@ -133,7 +146,7 @@
 					}
 				},
 				{
-					"type": "greenBlock",
+					"type": "GoodBlock",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

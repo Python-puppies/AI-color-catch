@@ -19,17 +19,25 @@
 					"objectClass": "System",
 					"sid": 510143841574330,
 					"parameters": {
-						"object-to-create": "redBlock",
+						"object-to-create": "BadBlock",
 						"layer": "0",
-						"x": "random(redBlock.Width / 2, LayoutWidth - redBlock.Width / 2)",
-						"y": "-redBlock.Height / 2",
+						"x": "random(BadBlock.Width / 2, LayoutWidth - BadBlock.Width / 2)",
+						"y": "-BadBlock.Height / 2",
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
 				},
 				{
+					"id": "set-default-color",
+					"objectClass": "BadBlock",
+					"sid": 581187213555246,
+					"parameters": {
+						"color": "rgba(random(0, 255), random(0, 150), random(0, 255), 1)"
+					}
+				},
+				{
 					"id": "set-enabled",
-					"objectClass": "redBlock",
+					"objectClass": "BadBlock",
 					"sid": 812109160299553,
 					"behaviorType": "Bullet",
 					"parameters": {
@@ -41,63 +49,55 @@
 		},
 		{
 			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 348181221989709,
-			"children": [
+			"conditions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 331064543096464,
-							"parameters": {
-								"interval-seconds": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 379823156989980,
-							"parameters": {
-								"object-to-create": "greenBlock",
-								"layer": "0",
-								"x": "random(greenBlock.Width / 2, LayoutWidth - greenBlock.Width / 2)",
-								"y": "-greenBlock.Height / 2",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "greenBlock",
-							"sid": 286125728471182,
-							"behaviorType": "Bullet",
-							"parameters": {
-								"state": "enabled"
-							}
-						}
-					],
-					"sid": 507356708583844
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 837786641792038,
+					"parameters": {
+						"interval-seconds": "1"
+					}
 				}
-			]
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 863725963486883,
+					"parameters": {
+						"object-to-create": "GoodBlock",
+						"layer": "0",
+						"x": "random(GoodBlock.Width / 2, LayoutWidth - GoodBlock.Width / 2)",
+						"y": "-GoodBlock.Height / 2",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "GoodBlock",
+					"sid": 609679580179318,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 663927298451916
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "is-outside-layout",
-					"objectClass": "redBlock",
+					"objectClass": "BadBlock",
 					"sid": 428987905277572
 				}
 			],
 			"actions": [
 				{
 					"id": "destroy",
-					"objectClass": "redBlock",
+					"objectClass": "BadBlock",
 					"sid": 422893427954961
 				}
 			],
@@ -108,14 +108,14 @@
 			"conditions": [
 				{
 					"id": "is-outside-layout",
-					"objectClass": "greenBlock",
+					"objectClass": "GoodBlock",
 					"sid": 317328102320333
 				}
 			],
 			"actions": [
 				{
 					"id": "destroy",
-					"objectClass": "greenBlock",
+					"objectClass": "GoodBlock",
 					"sid": 848230575137744
 				}
 			],
@@ -126,17 +126,17 @@
 			"conditions": [
 				{
 					"id": "on-collision-with-another-object",
-					"objectClass": "greenBlock",
+					"objectClass": "GoodBlock",
 					"sid": 799202185325869,
 					"parameters": {
-						"object": "redBlock"
+						"object": "BadBlock"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "destroy",
-					"objectClass": "redBlock",
+					"objectClass": "BadBlock",
 					"sid": 311422134912729
 				}
 			],

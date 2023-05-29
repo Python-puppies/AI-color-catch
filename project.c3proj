@@ -40,6 +40,13 @@
 			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "tint",
+			"name": "Tint",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "cnf79y7tt6m",
@@ -47,8 +54,8 @@
 		"items": [
 			"Player",
 			"Ground",
-			"redBlock",
-			"greenBlock"
+			"BadBlock",
+			"GoodBlock"
 		],
 		"subfolders": []
 	},
