@@ -7,9 +7,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 782441139269374,
+					"sid": 591919896193673,
 					"parameters": {
-						"interval-seconds": "3"
+						"interval-seconds": "1"
 					}
 				}
 			],
@@ -17,19 +17,19 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 289969603430136,
+					"sid": 510143841574330,
 					"parameters": {
-						"object-to-create": "Block",
+						"object-to-create": "redBlock",
 						"layer": "0",
-						"x": "random(Block.Width / 2, LayoutWidth - Block.Width / 2)",
-						"y": "-Block.Height / 2",
+						"x": "random(redBlock.Width / 2, LayoutWidth - redBlock.Width / 2)",
+						"y": "-redBlock.Height / 2",
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
 				},
 				{
 					"id": "set-enabled",
-					"objectClass": "Block",
+					"objectClass": "redBlock",
 					"sid": 812109160299553,
 					"behaviorType": "Bullet",
 					"parameters": {
@@ -43,25 +43,104 @@
 			"eventType": "block",
 			"conditions": [],
 			"actions": [],
-			"sid": 348181221989709
+			"sid": 348181221989709,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 331064543096464,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 379823156989980,
+							"parameters": {
+								"object-to-create": "greenBlock",
+								"layer": "0",
+								"x": "random(greenBlock.Width / 2, LayoutWidth - greenBlock.Width / 2)",
+								"y": "-greenBlock.Height / 2",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "greenBlock",
+							"sid": 286125728471182,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 507356708583844
+				}
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "is-outside-layout",
-					"objectClass": "Block",
+					"objectClass": "redBlock",
 					"sid": 428987905277572
 				}
 			],
 			"actions": [
 				{
 					"id": "destroy",
-					"objectClass": "Block",
+					"objectClass": "redBlock",
 					"sid": 422893427954961
 				}
 			],
 			"sid": 910278857722385
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "greenBlock",
+					"sid": 317328102320333
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "greenBlock",
+					"sid": 848230575137744
+				}
+			],
+			"sid": 511344764434316
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "greenBlock",
+					"sid": 799202185325869,
+					"parameters": {
+						"object": "redBlock"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "redBlock",
+					"sid": 311422134912729
+				}
+			],
+			"sid": 995629380207523
 		}
 	],
 	"sid": 773458510573163

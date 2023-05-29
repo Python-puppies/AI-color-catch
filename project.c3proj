@@ -47,7 +47,8 @@
 		"items": [
 			"Player",
 			"Ground",
-			"Block"
+			"redBlock",
+			"greenBlock"
 		],
 		"subfolders": []
 	},
